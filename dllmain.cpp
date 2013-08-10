@@ -24,8 +24,8 @@ int Thread()
 {
 	Sleep(1000);
   CIniReader iniReader(".\\flatout_widescreen_fix.ini");
-	if(!iniReader.ReadFloat("MAIN", "FOV_multiplier", 0.0f)) {
-		CIniReader iniReader(".\\scripts\\flatout_widescreen_fix.ini");
+	if(!iniReader.ReadFloat("MAIN", "FOV_multiplier", 0.0)) {
+		iniReader = CIniReader::CIniReader(".\\scripts\\flatout_widescreen_fix.ini");
 	}
 
 	while ( ((char)*(DWORD*)0x66C554 == 255 || !(char)*(DWORD*)0x66C554 == NULL) && ((char)*(DWORD*)0x66D554 == 255 || !(char)*(DWORD*)0x66D554 == NULL) ) //just a random address i found to check whether player is in menu
